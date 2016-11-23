@@ -43,7 +43,7 @@ export default function asyncGetAccessToken() {
       }
     };
 
-    if (currentStatus.status === 'ready') {
+    if (currentStatus.status === 'ready' && currentAuth.accessToken) {
       const currentUnixTime = getCurrentUnixTime();
       const accessTokenExpireTime =
         currentAuth.accessToken.created_at + currentAuth.accessToken.expires_in;

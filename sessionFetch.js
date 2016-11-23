@@ -13,7 +13,7 @@ const sessionFetch = async (uri, options = {}) => {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${accessToken.access_token}`,
+      'Authorization': accessToken ? `Bearer ${accessToken.access_token}` : null,
       ...(options.headers || {})
     }
   };
