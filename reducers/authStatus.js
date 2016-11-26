@@ -21,6 +21,20 @@ export default handleActions({
       status: 'ready'
     };
   },
+  DIS_AUTH_REQUEST: (state) => {
+    return {
+      ...state,
+      status: 'dis-authenticating',
+      error: null,
+      authError: null
+    };
+  },
+  DIS_AUTH: (state, action) => {
+    return {
+      ...state,
+      status: 'ready'
+    };
+  },
   TOKEN_REFRESH_REQUEST: (state) => {
     return {
       ...state,
@@ -38,6 +52,15 @@ export default handleActions({
     };
   },
   AUTH_REQUEST_ERROR: (state, action) => {
+    const { error } = action.payload;
+
+    return {
+      ...state,
+      status: 'ready',
+      error
+    };
+  },
+  DIS_AUTH_REQUEST_ERROR: (state, action) => {
     const { error } = action.payload;
 
     return {

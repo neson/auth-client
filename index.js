@@ -2,6 +2,7 @@ import { getStore, setStore } from './store';
 import { getProviderURL, setProviderURL } from './providerURL';
 
 import asyncAuth from './asyncAuth';
+import asyncDisAuth from './asyncDisAuth';
 import asyncRefreshAccessToken from './asyncRefreshAccessToken';
 import asyncGetAccessToken from './asyncGetAccessToken';
 import sessionFetch from './sessionFetch';
@@ -15,6 +16,7 @@ const authClient = {
   getProviderURL,
   setProviderURL,
   asyncAuth,
+  asyncDisAuth,
   asyncGetAccessToken,
   asyncRefreshAccessToken,
   sessionFetch,

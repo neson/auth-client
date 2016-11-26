@@ -13,6 +13,9 @@ export default handleActions({
     const { accessToken } = action.payload;
     return { accessToken };
   },
+  DIS_AUTH: (state, action) => {
+    return { accessToken: null };
+  },
   AUTH_ERROR_RECEIVED: (state, action) => {
     return { accessToken: null };
   }
