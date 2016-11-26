@@ -28,17 +28,21 @@ const asyncAuth = async function(username, password) {
         payload: { accessToken }
       });
     } else {
-      const oauthError = json;
+      const authError = json;
       store.dispatch({
         type: 'AUTH_ERROR_RECEIVED',
-        payload: { oauthError }
+        payload: { authError }
       });
+
+      throw authError;
     }
   } catch (error) {
     store.dispatch({
       type: 'AUTH_REQUEST_ERROR',
       payload: { error }
     });
+
+    throw error;
   }
 };
 
