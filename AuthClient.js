@@ -184,7 +184,7 @@ export default class AuthClient {
       } else {
         const oauthError = json;
         store.dispatch({
-          type: 'OAUTH_ERROR_RECEIVED',
+          type: 'AUTH_ERROR_RECEIVED',
           payload: { oauthError }
         });
       }
