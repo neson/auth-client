@@ -9,7 +9,8 @@
     "compile": "babel src --out-dir lib",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "prepublish": "npm run compile",
-    "test": "cross-env NODE_ENV=test nyc mocha"
+    "test": "cross-env NODE_ENV=test nyc mocha",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
     "babel-polyfill": "6.x"
